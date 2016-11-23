@@ -1,9 +1,10 @@
 from django.db import models
 
-class job(models.Model):
+class Job(models.Model):
 	company = models.CharField(max_length=200)
 	position = models.CharField(max_length=200)
 	date = models.DateTimeField('date applied')
 
 	def __str__(self):
-		return self.company
+		output = self.company + " " + self.position + " " + str(self.date)
+		return output
